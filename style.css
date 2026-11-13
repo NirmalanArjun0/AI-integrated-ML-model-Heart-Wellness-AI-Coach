@@ -1,0 +1,394 @@
+/* ============================================
+   Neon Glass Heart & Wellness Coach UI
+   ============================================ */
+
+/* ---- GLOBAL BASE ---- */
+
+body, .gradio-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e0f2fe;
+  background:
+    radial-gradient(circle at 0% 0%, #00f5ff33 0, transparent 40%),
+    radial-gradient(circle at 100% 100%, #004cff44 0, transparent 45%),
+    radial-gradient(circle at 0% 100%, #00ffb333 0, transparent 45%),
+    radial-gradient(circle at 50% -10%, #4c00ff88 0, #050019 55%);
+}
+
+/* 🔥 FORCE ALL TEXT BIGGER INSIDE GRADIO 🔥 */
+.gradio-container * {
+  font-size: 18px !important;  /* base size for ALL text */
+}
+
+.gradio-container > div {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 12px 40px;
+}
+
+/* Remove default “cards” from inner blocks */
+.gr-block, .gr-row, .gr-column, .tabitem {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* ---- MAIN NEON CARD ---- */
+
+#neon-card {
+  border-radius: 36px;
+  padding: 26px 32px 30px;
+  background: linear-gradient(135deg, #040b24dd, #050219dd);
+  border: 1px solid rgba(147, 197, 253, 0.8);
+}
+
+/* Title inside card */
+#neon-title h2,
+#neon-title h1,
+#neon-card h2,
+#neon-card h1 {
+  margin: 0 0 16px;
+  font-size: 40px !important;  /* bigger + override global */
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #7ee0ff;
+}
+
+/* ---- LAYOUT INSIDE CARD ---- */
+
+#neon-content-row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Left form panel */
+
+#form-panel {
+  flex: 1.1;
+  border-radius: 26px;
+  padding: 18px 18px 20px;
+  background: radial-gradient(circle at 0% 0%, #22d3ee44 0, transparent 55%),
+              linear-gradient(145deg, #050b2cdd, #05051ddd);
+  border: 1px solid rgba(129, 140, 248, 0.9);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+}
+
+/* Right prediction panel */
+
+#prediction-panel {
+  flex: 0.9;
+  border-radius: 26px;
+  padding: 18px 18px 20px;
+  background: radial-gradient(circle at 100% 0%, rgba(37, 142, 255, 0.85) 0, transparent 60%),
+              linear-gradient(145deg, #060521dd, #0b092bdd);
+  border: 1px solid rgba(192, 132, 252, 0.9);
+  box-shadow: 0 0 32px rgba(37, 142, 255, 0.85);
+}
+
+/* ---- FORM GRID INSIDE LEFT PANEL ---- */
+
+#form-grid-row-1,
+#form-grid-row-2 {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+#form-panel .gr-column {
+  padding: 0;
+}
+
+/* Labels – make them a bit bigger (Age, Gender, etc. text) */
+#form-panel label,
+#form-panel .wrap label,
+#form-panel .label-wrap {
+  font-size: 22px !important;
+  color: #cbd5ff;
+}
+
+/* Bigger blue labels for form fields */
+/* Bigger blue labels for Age, Gender, Height, etc. */
+.form-label,
+.form-label * {
+  font-size: 20px !important;   /* bigger text */
+  color: #c1ecff !important;    /* blue colour you wanted */
+}
+
+/* Inputs */
+
+#form-panel input,
+#form-panel select,
+#form-panel textarea {
+  font-size: 20px !important;
+  padding: 6px 10px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(148, 163, 255, 0.9) !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  color: #e0f2fe !important;
+  box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+}
+
+#form-panel input:focus,
+#form-panel select:focus,
+#form-panel textarea:focus {
+  outline: none !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 1) !important;
+}
+
+/* Predict button (bottom bar) */
+
+#predict-btn,
+#form-panel button,
+#form-panel .gr-button {
+  margin-top: 14px;
+  width: 100%;
+  font-size: 24px !important;
+  border-radius: 999px !important;
+  padding: 10px 16px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #006aff, #6366f1) !important;
+  color: #f9fafb !important;
+  font-weight: 600 !important;
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.8);
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+#predict-btn:hover,
+#form-panel .gr-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.9);
+}
+
+/* ---- RIGHT PANEL: PREDICTION TEXT ---- */
+
+#pred-heading h3,
+#tips-heading h3,
+#prediction-panel h3 {
+  margin: 0 0 8px;
+  color: #7ee0ff;
+  font-size: 24px !important;
+}
+
+#prediction-panel #pred-box,
+#prediction-panel #tips-box,
+#prediction-panel .gr-markdown {
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(165, 180, 252, 0.9);
+  font-size: 20px !important;
+  line-height: 1.7;
+  color: #e5edff;
+  margin-bottom: 12px;
+}
+
+/* emphasised numbers etc. */
+#prediction-panel strong {
+  color: #a5b4fc;
+}
+
+/* bullet lists */
+#prediction-panel ul {
+  padding-left: 20px;
+}
+
+/* RAG evidence quotes */
+#prediction-panel blockquote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 10px;
+  margin-left: 2px;
+  color: #bfdbfe;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 6px;
+}
+
+/* ---- CSV TAB & DISCLAIMER (simple) ---- */
+
+.dataframe {
+  font-size: 20px !important;
+  color: #e5edff;
+}
+
+#disclaimer {
+  margin-top: 16px;
+  font-size: 18px !important;
+  color: #a5b4fc;
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 900px) {
+  .gradio-container > div {
+    margin: 20px auto;
+    padding: 0 8px 30px;
+  }
+
+  #neon-card {
+    padding: 20px 18px 22px;
+  }
+
+  #neon-content-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  #neon-title h2 {
+    font-size: 30px !important;
+  }
+}
+
+/* Form grid: exactly 2 columns inside left panel */
+#form-grid-row-1 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+
+/* =========================================================
+   AI COACH BLOCK (LEFT SIDE)
+   ========================================================= */
+
+#coach-heading h3 {
+  margin: 14px 0 8px;
+  color: #00aaff;
+  font-size: 24px !important;
+  font-weight: 700;
+}
+
+#coach-box {
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(165, 180, 252, 0.9);
+  font-size: 22px !important;
+  line-height: 1.7;
+  color: #43cdff;
+  margin-top: 4px;
+}
+
+#coach-box strong {
+  color: #a5b4fc;
+}
+
+#coach-box ul {
+  padding-left: 20px;
+}
+
+#coach-box blockquote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 10px;
+  margin-left: 2px;
+  color: #bfdbfe;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   Q&A COACH SECTION (RIGHT SIDE) – CLEAN CHAT BUBBLE
+   ========================================================= */
+
+/* Heading text */
+#qa-heading h3,
+#qa-heading p {
+  margin: 6px 0 4px;
+  font-size:20px!important;
+  color: #2effe3;
+}
+
+/* === Ask the AI Coach accordion title === */
+
+#qa-accordion .label,
+#qa-accordion span {
+  color: #7ee0ff; /*yur colour */
+  font-size: 22px !important;     /* make it bigger */
+  font-weight: 700 !important;    /* a bit bolder */
+}
+
+
+/* Question textbox (when inside an accordion or directly in panel) */
+#qa-accordion textarea,
+#prediction-panel textarea {
+  border-radius: 14px !important;
+  border: 1px solid rgba(148, 163, 255, 0.8) !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+  color: #e5edff !important;
+  font-size: 18px !important;
+}
+
+/* Ask button – softer, no glow */
+#qa-btn {
+  margin-top: 8px;
+  width: 100%;
+  font-size:22px !important;
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #22c2c5, #4f46e5) !important;
+  color: #f9fafb !important;
+  font-weight:700!important;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.6);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+#qa-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.7);
+}
+
+/* Chat-like bubble for answer – clean, no neon glow */
+#qa-box {
+  position: relative;
+  margin-top: 10px;
+  background: rgba(15, 23, 42, 0.97);
+  border-radius: 18px 18px 18px 8px; /* small tail side */
+  padding: 12px 14px;
+  border: 1px solid rgba(96, 165, 250, 0.8);
+  color: #e5edff;
+  font-size: 19px !important;
+  line-height: 1.7;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.7);
+}
+
+/* Bubble tail */
+#qa-box::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: -8px;
+  width: 14px;
+  height: 14px;
+  background: rgba(15, 23, 42, 0.97);
+  border-left: 1px solid rgba(96, 165, 250, 0.8);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.8);
+  transform: rotate(45deg);
+}
+
+/* Inner formatting */
+#qa-box strong {
+  color: #a5b4fc;
+}
+
+#qa-box ul {
+  padding-left: 20px;
+}
+
+#qa-box blockquote {
+  border-left: 3px solid #2297c5;
+  padding-left: 10px;
+  margin-left: 2px;
+  color: #bfdbfe;
+  background: rgba(15, 23, 42, 0.98);
+  border-radius: 6px;
+}
