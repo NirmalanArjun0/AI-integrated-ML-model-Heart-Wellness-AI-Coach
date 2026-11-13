@@ -21,6 +21,11 @@ The system implements a structured supervised learning pipeline for cardiovascul
 | Model Output | Heart-Risk Classification (Yes/No) |
 | Probability Estimation | P(Yes) and P(No) |
 
+<img width="940" height="657" alt="image" src="https://github.com/user-attachments/assets/65445091-bb11-4d5c-b8a4-e75e6a68f8ae" />
+<img width="940" height="587" alt="image" src="https://github.com/user-attachments/assets/1868de83-493e-4c43-9362-b2ef1b78a7a6" />
+<img width="437" height="622" alt="image" src="https://github.com/user-attachments/assets/f1f3170c-ca85-42e9-ac71-c67623998c70" />
+<img width="414" height="621" alt="image" src="https://github.com/user-attachments/assets/40a3b6a5-8102-4552-bbe4-043a535003eb" />
+
 ## Agentic AI, RAG & LLM Architecture
 
 The system integrates Machine Learning, rule-based reasoning, ontology-based knowledge representation, Retrieval-Augmented Generation (RAG), and locally hosted Generative AI.
